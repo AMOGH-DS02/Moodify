@@ -102,3 +102,20 @@ a {
     @apply bg-background text-foreground;
   }
 }
+/* Existing Tailwind & custom styles here */
+
+/* Autofill style fix */
+input:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px white inset !important;
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  -webkit-text-fill-color: black !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Optional: dark mode support */
+@media (prefers-color-scheme: dark) {
+  input:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px #1f1f1f inset !important;
+    -webkit-text-fill-color: white !important;
+  }
+}

@@ -1,6 +1,5 @@
-// src/app/signup/page.tsx
-
 'use client';
+
 import * as React from 'react';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -33,7 +32,7 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="flex flex-col items-center justify-center min-h-screen px-4">
       <form onSubmit={handleSignup} className="space-y-4 w-80">
         <h1 className="text-2xl font-bold text-center">Sign Up</h1>
 
@@ -42,7 +41,8 @@ export default function SignupPage() {
           placeholder="Email"
           value={email}
           onChange={e => setEmail(e.target.value)}
-          className="w-full px-4 py-2 border rounded"
+          className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-black"
+          required
         />
 
         <input
@@ -50,7 +50,8 @@ export default function SignupPage() {
           placeholder="Password"
           value={password}
           onChange={e => setPassword(e.target.value)}
-          className="w-full px-4 py-2 border rounded"
+          className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-black"
+          required
         />
 
         {error && <p className="text-red-500 text-sm">{error}</p>}

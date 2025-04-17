@@ -1,7 +1,4 @@
-// src/app/login/page.tsx (or .jsx)
-
 'use client';
-
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -35,8 +32,8 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      <form onSubmit={handleEmailLogin} className="space-y-4 w-80">
+    <div className="flex flex-col items-center justify-center min-h-screen px-4">
+      <form onSubmit={handleEmailLogin} className="space-y-4 w-full max-w-sm">
         <h1 className="text-2xl font-bold text-center">Login</h1>
 
         <input
@@ -44,7 +41,7 @@ export default function LoginPage() {
           placeholder="Email"
           value={email}
           onChange={e => setEmail(e.target.value)}
-          className="w-full px-4 py-2 border rounded"
+          className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
         />
 
         <input
@@ -52,24 +49,24 @@ export default function LoginPage() {
           placeholder="Password"
           value={password}
           onChange={e => setPassword(e.target.value)}
-          className="w-full px-4 py-2 border rounded"
+          className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
         />
 
-        {error && <p className="text-red-500 text-sm">{error}</p>}
+        {error && <p className="text-red-500 text-sm text-center">{error}</p>}
 
         <button
           type="submit"
-          className="w-full py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          className="w-full py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition duration-200"
         >
           Login with Email
         </button>
       </form>
 
-      <div className="my-4 text-gray-500">or</div>
+      <div className="my-4 text-gray-600">or</div>
 
       <button
         onClick={handleGoogleLogin}
-        className="flex items-center gap-2 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+        className="flex items-center justify-center gap-2 px-4 py-2 bg-red-500 text-white font-semibold rounded-md hover:bg-red-600 transition duration-200"
       >
         <svg className="w-5 h-5" viewBox="0 0 24 24">
           <path
