@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "vercel-build": "NEXT_SKIP_ESLINT=true next build",
+    "vercel-build": "NEXT_DISABLE_ESLINT=true next build",
     "start": "next start",
     "lint": "next lint"
   },
