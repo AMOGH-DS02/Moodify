@@ -1,9 +1,6 @@
-import MoodDetector from '@/components/MoodDetector';
+// app/page.tsx
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  return (
-    <main className="min-h-screen flex items-center justify-center">
-      <MoodDetector />
-    </main>
-  );
+  redirect("/signup");
 }
